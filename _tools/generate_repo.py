@@ -26,7 +26,7 @@ from xml.dom import minidom
 import glob
 import datetime
 import traceback
-from ConfigParser import SafeConfigParser
+from configparser import safeconfigparser
 
 class Generator:
     
@@ -41,7 +41,7 @@ class Generator:
         """
         Load the configuration
         """
-        self.config = SafeConfigParser()
+        self.config = safeconfigparser()
         self.config.read('config.ini')
         
         self.tools_path=os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__))))
