@@ -26,7 +26,10 @@ from xml.dom import minidom
 import glob
 import datetime
 import traceback
-from configparser import safeconfigparser
+from ConfigParser import SafeConfigParser
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 class Generator:
     
@@ -41,7 +44,7 @@ class Generator:
         """
         Load the configuration
         """
-        self.config = safeconfigparser()
+        self.config = SafeConfigParser()
         self.config.read('config.ini')
         
         self.tools_path=os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__))))
